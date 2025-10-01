@@ -1,0 +1,118 @@
+﻿@page "/searchdictionary"
+@using System.Text.Json
+@using BlazorResume.Codes
+
+@* @inject IJSRuntime JSRuntime *@
+
+<PageTitle>Dictionary</PageTitle>
+
+<body class="bg-gray-100">
+<header class="bg-white sticky top-0 z-50 shadow-md">
+    <nav class="container mx-auto p-4 flex justify-between items-center rounded-b-lg">
+        <h1 class="text-xl md:text-2xl font-bold text-gray-800">Dictionary</h1>
+    </nav>
+</header>
+
+<h1>Dictionary</h1>
+
+@if (string.IsNullOrWhiteSpace(SearchTerm))
+{
+    <p>This demonstrates searching data.</p>
+}
+else
+{
+    <p>This demonstrates searching data ... '@SearchTerm'</p>
+    @if (selectedItem != null)
+    {
+          <p>Selected: '@selectedItem.Name'</p> 
+    }
+}
+
+<input @bind="SearchTerm" @bind:event="oninput" placeholder="Search..." class="form-control" />
+
+@if (SearchService.WordEntries == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    @foreach (var item in FilteredItems)
+    {
+        <div class="mb-2">
+            <button id="@item.ID" class="btn"
+                    @onfocus="() => HandleFocus(item)"
+                    @onclick="() => ToggleDefinition(item)">
+                @item.Name
+            </button>
+            @if (item.IsShowDefinition)
+            {
+                <div class="alert alert-secondary">
+                    @item.Definition
+                </div>
+            }
+        </div>
+    }
+}
+
+<footer class="bg-white p-4 text-center text-gray-600 rounded-t-xl mt-8">
+    <p>&copy; 2025 Micaiah Stevens. All rights reserved.</p>
+</footer>
+
+</body>
+
+@code {
+    // [Inject] private IJSRuntime JS { get; set; }
+}
+
+@* We always save code for future ideas and ways we tried to do it before*@
+
+@*
+<table class="table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Temp. (C)</th>
+            <th>Temp. (F)</th>
+            <th>Summary</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var worldEntry in wordEntries)
+        {
+            <tr>
+                <td>@worldEntry.Date.ToShortDateString()</td>
+                <td>@worldEntry.TemperatureC</td>
+                <td>@worldEntry.TemperatureF</td>
+                <td>@worldEntry.Summary</td>
+            </tr>
+        }
+    </tbody>
+</table>
+*@
+
+@*
+<li>@item.Name</li>
+*@
+@*
+WordEntry newWord = item;
+<div class="mb-2">
+    <button class="btn"
+            @onblur="HandleBlur"
+            @onclick="() => newWord.ToggleDefinition()">
+        @newWord.Name
+    </button>
+    @if (newWord.ShowDefinition)
+    {
+        <div class="alert alert-secondary">
+            @newWord.Definition
+        </div>
+    }
+    else
+    {
+        @HandleClick()
+        ;
+    }
+</div>
+*@
+
+@*@onblur="() => HandleBlur(item)" *@

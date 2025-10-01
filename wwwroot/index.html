@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlazorResume</title>
+    <HeadContent>
+        <meta name="description" content="Learn more about our company." />
+    </HeadContent>
+    <base href="/" />
+    <link rel="stylesheet" href="css/app.css" />
+    <!-- If you add any scoped CSS files, uncomment the following to load them
+    <link href="BlazorResume.styles.css" rel="stylesheet" /> -->
+    <!--<link rel="stylesheet" href="bootstrap/bootstrap.min.css" />-->
+    <link rel="stylesheet" href="BlazorResume.styles.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <HeadOutlet />
+</head>
+
+<body>
+    <div id="app">
+        <svg class="loading-progress">
+            <circle r="40%" cx="50%" cy="50%" />
+            <circle r="40%" cx="50%" cy="50%" />
+        </svg>
+        <div class="loading-progress-text"></div>
+    </div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="." class="reload">Reload</a>
+        <span class="dismiss">🗙</span>
+    </div>
+    <script src="_framework/blazor.webassembly.js"></script>
+</body>
+
+</html>
+
+<script>
+    function blurElement(id) {
+        const el = document.getElementById(id);
+        if (el) el.blur();
+    }
+
+    function showSection(sectionId) {
+        // Hide all sections
+        document.querySelectorAll('.section').forEach(section => {
+            section.classList.remove('active');
+        });
+
+        // Remove active class from all nav links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+        });
+
+        // Show the selected section
+        const section = document.getElementById(sectionId);
+        if (section) section.classList.add('active');
+
+        // Add active class to the clicked nav link
+        const navLink = document.querySelector(`[onclick="showSection('${sectionId}')"]`);
+        if (navLink) navLink.classList.add('active');
+    }
+
+    // Wait until the full page (including Blazor-rendered DOM) is loaded
+    window.addEventListener('load', () => {
+        showSection('resume-section');
+    });
+</script>

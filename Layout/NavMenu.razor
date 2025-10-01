@@ -1,0 +1,289 @@
+﻿@using BlazorResume.Codes
+
+@inject LayoutState LayoutState
+
+@*  // This was an attempt at building a Comment Section
+    // We have since moved to a generic up for everyone.
+    // ┌────────────────────────────────────────────┐
+    // │ Component: NavMenu.razor                   │
+    // │ Purpose: Sidebar navigation menu           │
+    // │ Author: Copilot recursive Clippy           │
+    // │ Last Updated: 2025-09-20                   │
+    // └────────────────────────────────────────────┘
+*@
+
+<div class="nav-scrollable navbar navbar-dark bg-dark" sidebar>
+    <div class="nav-item">
+        <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+            <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
+        </NavLink>
+    </div>
+
+    <div class="nav-item">
+        <NavLink class="nav-link" href="LiveLogs">
+            <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Live Logs
+        </NavLink>
+    </div>
+
+    <div class="nav-item">
+        <NavLink class="nav-link" href="SearchDictionary">
+            <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Dictionary
+        </NavLink>
+    </div>
+
+    <div class="nav-item">
+        <NavLink class="nav-link" href="Games">
+            <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Games
+        </NavLink>
+    </div>
+
+@*     <div class="nav-item">
+        <NavLink class="nav-link" href="CIO">
+            <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Chief Integration Officer
+        </NavLink>
+    </div> *@
+
+</div>
+
+@code {
+    // // A parameter to raise an event to the parent.
+    // [Parameter]
+    // public EventCallback OnToggle { get; set; }
+}
+
+@* We always save code for future ideas and ways we tried to do it before*@
+
+@* 
+<nav>
+    <ul>
+    </ul>
+</nav> *@
+
+@* @if (IsCollapsed)
+{
+
+}
+else
+{
+    <nav>
+        <ul>
+            <li><NavLink href="">Home</NavLink></li>
+            <li><NavLink href="counter">Counter</NavLink></li>
+            <li><NavLink href="weather">Weather</NavLink></li>
+        </ul>
+    </nav>
+} *@
+
+@* <div class="sidebar @(collapseNavMenu ? "collapsed" : null)">
+    <nav>
+        <ul>
+            <li><NavLink href="">Home</NavLink></li>
+            <li><NavLink href="counter">Counter</NavLink></li>
+            <li><NavLink href="weather">Weather</NavLink></li>
+        </ul>
+    </nav>
+</div> *@
+
+@* <div class="sidebar @(collapseNavMenu ? "collapsed" : "")">
+    <nav>
+        <ul>
+            <li><NavLink href="">Home</NavLink></li>
+            <li><NavLink href="counter">Counter</NavLink></li>
+            <li><NavLink href="weather">Weather</NavLink></li>
+            <!-- Add more links as needed -->
+        </ul>
+    </nav>
+</div> *@
+
+@* navbar navbar-dark bg-dark" *@
+
+@* <nav class="navbar navbar-dark bg-dark @(collapseNavMenu ? "sidebar collapsed" : "sidebar")">
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                    <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
+                </NavLink>
+            </li>
+            <!-- Add other links here -->
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="counter">
+                    <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
+                </NavLink>
+            </li>
+
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="gamecounter">
+                    <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Game Counter
+                </NavLink>
+            </li>
+
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="weather">
+                    <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
+                </NavLink>
+            </li>
+        </ul>
+    </div>
+</nav> *@
+
+@* @if (collapseNavMenu == false)
+{
+    <nav class="navbar navbar-dark bg-dark" sidebar.collapsed>
+    </nav>
+}
+else
+{
+    <nav class="navbar navbar-dark bg-dark" sidebar>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+            </ul>
+        </div>
+    </nav>
+} *@
+
+
+@* <input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+*@
+
+@*<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+</nav> *@
+
+@* 
+<a class="navbar-brand" href="#">YourBrand</a>
+
+<div class="nav-sidebar" onclick="document.querySelector('.navbar-toggler').click()">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="LiveLogs">
+                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Live Logs
+            </NavLink>
+        </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="SearchDictionary">
+                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Dictionary
+            </NavLink>
+        </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="DumbChat">
+                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Dumb Chat
+            </NavLink>
+        </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="Games">
+                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Games
+            </NavLink>
+        </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="DreamJob">
+                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Dream Job
+            </NavLink>
+        </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="DouglasAdams">
+                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Douglas Adams
+            </NavLink>
+        </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="counter">
+                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
+            </NavLink>
+        </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="gamecounter">
+                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Game Counter
+            </NavLink>
+        </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="weather">
+                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
+            </NavLink>
+        </div>
+
+    </nav>
+</div> 
+*@
+
+@* <nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+        <NavLink href="" Match="NavLinkMatch.All" class="nav-link">Home</NavLink>
+        <NavLink href="counter" class="nav-link">Counter</NavLink>
+        <NavLink href="fetchdata" class="nav-link">Fetch Data</NavLink>
+    </div>
+</nav>
+*@
+
+@* nav-scrollable *@
+
+@* 
+<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="counter">
+                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="weather">
+                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
+            </NavLink>
+        </div>
+    </nav>
+</div>
+*@
+
+@*
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+        </ul>
+    </div>
+</nav> 
+*@
+
+@*
+<nav class="@(IsCollapsed ? "collapsed" : null)">
+    <ul>
+        <li><NavLink href="">Home</NavLink></li>
+        <li><NavLink href="counter">Counter</NavLink></li>
+        <li><NavLink href="weather">Weather</NavLink></li>
+    </ul>
+</nav>
+*@
+@* <div class="navbar navbar-dark bg-dark" sidebar> *@
+@* <div class="navbar-wrapper"> *@
+
+
+@* <div class="top-row ps-4 navbar navbar-dark">
+ <div class="container-fluid">
+        <a class="navbar-brand" href="">Micaiah Stevens Design 2024</a>
+    </div>
+</div> *@
+
+@* @inherits LayoutComponentBase
+ *@
+
+@*
+// [Parameter]
+// public bool IsCollapsed { get; set; }
+// IsCollapsed = !IsCollapsed;
+*@

@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+	<!--<DisableScopedCssBundling>false</DisableScopedCssBundling>-->
+  </PropertyGroup>
+
+    <!--<ItemGroup>
+	    <Content Update="Layout\MainLayout.razor">
+		    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+	    </Content>
+    </ItemGroup>
+
+	<PropertyGroup>
+		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+		<ScopedCssUseBuildServer>false</ScopedCssUseBuildServer>
+		<BlazorEnableScopedCssBundling>true</BlazorEnableScopedCssBundling>
+	</PropertyGroup>-->
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.9" PrivateAssets="all" />
+  </ItemGroup>
+
+	<!--<Target Name="CleanScopedCssOnClean" AfterTargets="Clean">
+		<Delete Files="wwwroot\BlazorResume.styles.css"
+				Condition="Exists('wwwroot\BlazorResume.styles.css')" />
+	</Target>
+
+	<Target Name="CopyScopedCss" AfterTargets="Build">
+		<Delete Files="wwwroot\BlazorResume.styles.css" />
+		<Copy SourceFiles="obj\$(Configuration)\net9.0\scopedcss\bundle\BlazorResume.styles.css"
+			  DestinationFiles="wwwroot\BlazorResume.styles.css"
+			  SkipUnchangedFiles="true" />
+	</Target>
+
+	<Target Name="PrePublishCleanup" BeforeTargets="Publish">
+		<Delete Files="obj\$(Configuration)\net9.0\scopedcss\bundle\BlazorResume.styles.css"
+				Condition="Exists('obj\$(Configuration)\net9.0\scopedcss\bundle\BlazorResume.styles.css')" />
+	</Target>-->
+
+</Project>

@@ -1,0 +1,108 @@
+﻿@using BlazorResume.Codes
+@inherits LayoutComponentBase
+@inject LogService LogService
+@inject LayoutState LayoutState
+
+@code {
+    // We used a dynamic main page to toggled our sidebar.
+    void ToggleSidebar()
+    {
+        //LogService.AddLog($"Toggled SideBar: {ShowSidebar}");
+        LayoutState.SidebarCollapsed = !LayoutState.SidebarCollapsed;
+        StateHasChanged();
+    }
+}
+
+<div class="page">
+    <article class="sidebar @(LayoutState.SidebarCollapsed ? "collapsed" : null)">
+        <NavMenu />
+    </article>
+    <main class="main @(LayoutState.SidebarCollapsed ? "sidebar-collapsed" : null)">
+        <div class="container-fluid">
+            <div class="d-flex justify-content-between align-items-center px-4">
+                <button @onclick="@ToggleSidebar">☰ Menu</button>
+                <div style="flex: 0 0 75%;">
+                    <a class="navbar-brand" href="/">Micaiah Stevens Design 2024</a>
+                </div>
+                <div style="flex: 0 0 25%; text-align: right;">
+                    <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+                </div>
+            </div>
+        </div>
+        @* <div class="container-fluid"> *@
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
+
+<div id="blazor-error-ui">
+    An unhandled error has occurred.
+    <a href="" class="reload">Reload</a>
+    <a class="dismiss">🗙</a>
+</div>
+
+@* We always save code for future ideas and ways we tried to do it before*@
+
+@* The biggest change we were trying to use various ways to use a static MainLayout
+    This does NOT work, as no code, or thread operates on the secondary thread.
+    PROBABLY a way around this issue, but making all pages Dynamic, was 100xs easier.
+*@
+
+@* <div>
+    <a href="/">Micaiah Stevens Design 2024</a>
+    <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+</div> *@
+
+@* <div class="container-fluid">
+<a class="navbar-brand" href="">Micaiah Stevens Design 2024</a>
+<div class="top-row px-4">
+    <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+</div>
+</div> *@
+
+@*<h2>Default Layout</h2>
+<p>This is the default layout with no CSS.</p>
+<a href="/">Home</a>
+<a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a> *@
+
+
+@* @if (UssCSS)
+{
+    <div class="container-fluid">
+        <div class="d-flex justify-content-between align-items-center px-4">
+            <button @onclick="@ToggleSidebar">☰ Menu</button>
+            <div style="flex: 0 0 75%;">
+                <a class="navbar-brand" href="/">Micaiah Stevens Design 2024</a>
+            </div>
+            <div style="flex: 0 0 25%; text-align: right;">
+                <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="d-flex justify-content-between align-items-center px-4">
+        <button @onclick="@ToggleSidebar">☰ Menu</button>
+        <div style="flex: 0 0 75%;">
+            <a class="navbar-brand" href="/">Micaiah Stevens Design 2024</a>
+        </div>
+        <div style="flex: 0 0 25%; text-align: right;">
+            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+        </div>
+    </div>
+} *@
+
+@* @code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            LogService.AddLog("MainLayout rendered");
+        }
+    }
+} *@
+@* <article class="content px-4">
+    @Body
+</article> *@
