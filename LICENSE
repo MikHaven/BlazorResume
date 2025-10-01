@@ -1,21 +1,42 @@
-MIT License
+\# AI Usage Restriction Notice
 
-Copyright (c) 2025 MikHaven
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+This repository and its contents are protected by a custom license. The author explicitly prohibits the use of any code, content, documentation, or assets contained herein for the purpose of training, fine-tuning, or improving any artificial intelligence or machine learning system, including but not limited to large language models, generative models, or automated code generation tools.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+
+
+\## Prohibited Uses
+
+
+
+\- Training or fine-tuning AI/ML models using this repository's content
+
+\- Commercial use or redistribution without written permission
+
+\- Automated scraping or ingestion of this repository for AI development
+
+
+
+\## Enforcement
+
+
+
+Violation of these terms may result in legal action. By accessing or using this repository, you agree to abide by these restrictions.
+
+
+
+For licensing inquiries or permissions, contact the repository owner directly.
+
+
+
+\## Disclaimer of Warranty:
+
+
+
+This software is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and noninfringement. In no event shall the author be liable for any claim, damages, or other liability arising from the use of the software.
+
+
+
+By downloading, installing, or running this software, the user acknowledges that they do so at their own risk.
+

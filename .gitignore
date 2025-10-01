@@ -1,0 +1,37 @@
+# Ignore build output
+bin/
+obj/
+
+# Ignore user-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore Visual Studio files
+.vs/
+*.dbmdl
+*.jfm
+
+# Ignore logs and test results
+*.log
+TestResults/
+*.trx
+
+# Ignore NuGet packages
+*.nupkg
+*.snupkg
+packages/
+*.nuspec
+
+# Ignore deployment artifacts EXCEPT GitHub Pages output
+# If you're using GitHub Actions to deploy to gh-pages, DO NOT ignore the output folder (e.g., 'publish/' or 'wwwroot/') if it's committed
+# If you're using a separate branch for deployment, this ignore is safe
+# wwwroot/ ← only ignore if it's regenerated during build
+
+# Ignore GitHub Actions temp files
+.github/workflows/*.tmp
+
+# Ignore OS-specific files
+*.DS_Store
+Thumbs.db
