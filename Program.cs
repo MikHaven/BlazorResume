@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
 using BlazorResume.Codes;
+using Microsoft.AspNetCore.Components;
 
 namespace BlazorResume
 {
@@ -32,6 +33,18 @@ namespace BlazorResume
             builder.Services.AddSingleton<LayoutState>();
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+
+            builder.Services.AddScoped(sp => {
+                var nav = sp.GetRequiredService<NavigationManager>();
+                var uri = new Uri(nav.Uri);
+                var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
+                var path = query.Get(null); // Gets the unnamed query value
+                if (!string.IsNullOrEmpty(path))
+                {
+                    nav.NavigateTo(path, forceLoad: true);
+                }
+                return nav;
+            });
 
             await builder.Build().RunAsync();
         }
