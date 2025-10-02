@@ -68,16 +68,16 @@
     window.addEventListener('load', () => {
         showSection('resume-section');
     });
-
-    // This script checks if a redirect path 'p' was passed from the 404 page
-    // and adjusts the browser history so Blazor loads the correct component.
-    (function () {
-        var query = new URLSearchParams(window.location.search);
-        var path = query.get('p');
-
-        // If a path was passed, use replaceState to put the correct URL in the address bar
-        if (path) {
-            history.replaceState(null, '', path);
-        }
-    })();
 </script>
+
+<!--// This script checks if a redirect path 'p' was passed from the 404 page
+// and adjusts the browser history so Blazor loads the correct component.
+(function () {
+    var query = new URLSearchParams(window.location.search);
+    var path = query.get('p');
+
+    // If a path was passed, use replaceState to put the correct URL in the address bar
+    if (path) {
+        history.replaceState(null, '', path);
+    }
+})();-->
