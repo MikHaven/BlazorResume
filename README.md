@@ -1,5 +1,7 @@
 # BlazorResume 🧑‍💻
 
+👋 Hi, I'm MikHaven—a full-stack developer with a passion for clean code, fast UIs, and solving real-world problems. Here's my interactive resume built with Blazor WebAssembly.
+
 [![View Resume](https://img.shields.io/badge/View-Resume-blue)](https://mikhaven.github.io/BlazorResume/)
 
 A sleek, customizable personal resume built using Blazor, the modern web UI framework from Microsoft. This project demonstrates how to create a professional online resume with interactive components and clean design—all powered by .NET.
