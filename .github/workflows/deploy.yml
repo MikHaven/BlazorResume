@@ -32,7 +32,7 @@ jobs:
       - name: Force Copy 404.html to Deployment Root
         # This command copies the file from its source location 
         # directly into the final deployment folder.
-        run: cp wwwroot/404.html build_output/404.html
+        run: cp wwwroot/404.html release/wwwroot/404.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
