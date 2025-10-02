@@ -2,8 +2,7 @@ name: Deploy Blazor WebAssembly to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   build-and-deploy:
@@ -13,23 +12,26 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup .NET
+      - name: Setup .NET SDK
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '8.0.x' # or your target version
+          dotnet-version: '7.0.x'
 
       - name: Restore dependencies
         run: dotnet restore
 
-      - name: Build Blazor WebAssembly
-        run: dotnet publish -c Release -o build_output
+      - name: Build the project
+        run: dotnet build --configuration Release
 
-      - name: Add .nojekyll file
-        run: touch build_output/wwwroot/.nojekyll
+      - name: Publish the project
+        run: dotnet publish -c Release -o release
+
+      - name: Add .nojekyll to bypass Jekyll processing
+        run: touch release/wwwroot/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: build_output/wwwroot
-          publish_branch: gh-pages
+          publish_dir: release/wwwroot
+          force_orphan: true
