@@ -12,6 +12,16 @@
 	<BlazorWebAssemblyBaseHref>/BlazorResume/</BlazorWebAssemblyBaseHref>
 </PropertyGroup>
 
+
+<ItemGroup>
+  <Content Remove="wwwroot\404.html" />
+</ItemGroup>
+
+
+<ItemGroup>
+  <None Include="wwwroot\404.html" />
+</ItemGroup>
+
     <!--<ItemGroup>
 	    <Content Update="Layout\MainLayout.razor">
 		    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
