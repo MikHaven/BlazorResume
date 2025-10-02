@@ -34,17 +34,17 @@ namespace BlazorResume
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
-            builder.Services.AddScoped(sp => {
-                var nav = sp.GetRequiredService<NavigationManager>();
-                var uri = new Uri(nav.Uri);
-                var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
-                var path = query.Get(null); // Gets the unnamed query value
-                if (!string.IsNullOrEmpty(path))
-                {
-                    nav.NavigateTo(path, forceLoad: true);
-                }
-                return nav;
-            });
+            //builder.Services.AddScoped(sp => {
+            //    var nav = sp.GetRequiredService<NavigationManager>();
+            //    var uri = new Uri(nav.Uri);
+            //    var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
+            //    var path = query.Get(null); // Gets the unnamed query value
+            //    if (!string.IsNullOrEmpty(path))
+            //    {
+            //        nav.NavigateTo(path, forceLoad: true);
+            //    }
+            //    return nav;
+            //});
 
             await builder.Build().RunAsync();
         }
