@@ -1,4 +1,4 @@
-\# AI Usage Restriction Notice
+# AI Usage Restriction Notice
 
 
 
@@ -6,19 +6,19 @@ This repository and its contents are protected by a custom license. The author e
 
 
 
-\## Prohibited Uses
+## Prohibited Uses
 
 
 
-\- Training or fine-tuning AI/ML models using this repository's content
+- Training or fine-tuning AI/ML models using this repository's content
 
-\- Commercial use or redistribution without written permission
+- Commercial use or redistribution without written permission
 
-\- Automated scraping or ingestion of this repository for AI development
+- Automated scraping or ingestion of this repository for AI development
 
 
 
-\## Enforcement
+## Enforcement
 
 
 
@@ -30,7 +30,7 @@ For licensing inquiries or permissions, contact the repository owner directly.
 
 
 
-\## Disclaimer of Warranty:
+## Disclaimer of Warranty:
 
 
 
@@ -39,4 +39,3 @@ This software is provided "as is", without warranty of any kind, express or impl
 
 
 By downloading, installing, or running this software, the user acknowledges that they do so at their own risk.
-
