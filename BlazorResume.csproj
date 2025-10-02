@@ -7,6 +7,11 @@
 	<!--<DisableScopedCssBundling>false</DisableScopedCssBundling>-->
   </PropertyGroup>
 
+
+<PropertyGroup Condition="'$(Configuration)' == 'Release'">
+	<BlazorWebAssemblyBaseHref>/BlazorResume/</BlazorWebAssemblyBaseHref>
+</PropertyGroup>
+
     <!--<ItemGroup>
 	    <Content Update="Layout\MainLayout.razor">
 		    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
