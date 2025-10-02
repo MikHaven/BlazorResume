@@ -22,6 +22,12 @@
   <None Include="wwwroot\404.html" />
 </ItemGroup>
 
+<ItemGroup>
+	<Content Update="wwwroot\404.html">
+		<CopyToPublishDirectory>Always</CopyToPublishDirectory>
+	</Content>
+</ItemGroup>
+
     <!--<ItemGroup>
 	    <Content Update="Layout\MainLayout.razor">
 		    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
